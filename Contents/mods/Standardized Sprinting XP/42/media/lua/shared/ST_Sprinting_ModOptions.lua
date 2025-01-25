@@ -1,42 +1,33 @@
---Default options.
-local SETTINGS = { 
-	options = {
-		dropdown1 = 2,
-		dropdown2 = 3,
-	},
-	names= {
-		dropdown1 = "Xp Multiplier",
-		dropdown2 = "Xp Delay",
-	},
-	mod_id = "STSPRINT",
-	mod_shortname = "Standardized Sprinting XP"
-}
+local config = require("ST_Sprinting_Config")
+local MVXIVY_Utils = require("MVXIVY_Utils")
+local modOptions = {}
 
--- Connecting the options to the menu, so user can change them.
-if ModOptions and ModOptions.getInstance then
-	local settings = ModOptions:getInstance(SETTINGS)
-	
-	local drop1 = settings:getData("dropdown1")
-	drop1[1] = "1xp"
-	drop1[2] = "5xp"
-	drop1[3] = "10xp"
-	drop1[4] = "25xp"
-	drop1[5] = "50xp"
-	drop1[6] = "100xp"
-	drop1[7] = "1000xp"
-	drop1.tooltip = "Xp Reward for Sprinting skill"
-	local drop2 = settings:getData("dropdown2")
-	drop2[1] = "250"
-	drop2[2] = "500"
-	drop2[3] = "1000"
-	drop2[4] = "1500"
-	drop2[5] = "2000"
-	drop2[6] = "3000"
-	drop2[7] = "5000"
-	drop2[8] = "10000"
-	drop2.tooltip = "Delay between bar xp rewards, default: 1000 (~15.6 sec)."
+function modOptions.init()
+	local UI = PZAPI.ModOptions:create(config.modId, config.modName)
 
+	local ComboBoxFactory = MVXIVY_Utils.useComboBoxFactory(
+		"ST_Sprinting_",
+		"UI_options_" .. config.modId,
+		UI
+	)
+
+	local ComboBoxReward = ComboBoxFactory{
+		name="ComboBoxReward",
+    label="reward_label",
+    items={ "1xp", "5xp", "10xp", "25xp", "50xp", "100xp", "1000xp" },
+		defaultItem=2,
+    description="reward_description"
+	}
+	modOptions.ComboBoxReward = ComboBoxReward
+
+  local ComboBoxDelay = ComboBoxFactory{
+    name="ComboBoxDelay",
+    label="delay_label",
+    items={ "250", "500", "1000", "1500", "2000", "3000", "5000", "10000" },
+    defaultItem=3,
+    description="delay_description"
+  }
+  modOptions.ComboBoxDelay = ComboBoxDelay
 end
 
-StandardizedSprintingXP_global = {}
-StandardizedSprintingXP_global.SETTINGS = SETTINGS
+return modOptions
