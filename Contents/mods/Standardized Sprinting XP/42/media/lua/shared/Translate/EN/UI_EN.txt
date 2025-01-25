@@ -1,5 +1,5 @@
 UI_EN = {
-  UI_options_STSPRINT_B42_reward_label = "Xp Multiplier",
+  UI_options_STSPRINT_B42_reward_label = "Xp amount",
   UI_options_STSPRINT_B42_reward_description = "Xp Reward for Sprinting skill",
   UI_options_STSPRINT_B42_delay_label  = "Xp Delay",
   UI_options_STSPRINT_B42_delay_description  = "Delay between bar xp rewards, default: 1000 (~15.6 sec).",

@@ -1,6 +1,6 @@
 UI_RU = {
-  UI_options_STSPRINT_B42_reward_label = "Множитель опыта",
-  UI_options_STSPRINT_B42_reward_description = "Награда за опыт за навык спринта",
+  UI_options_STSPRINT_B42_reward_label = "Опыт",
+  UI_options_STSPRINT_B42_reward_description = "Количество опыта, получаемого за навык спринта",
   UI_options_STSPRINT_B42_delay_label  = "Задержка опыта",
   UI_options_STSPRINT_B42_delay_description  = "Задержка до получения опыта, по умолчанию: 1000 (~15,6 сек.).",
 }
