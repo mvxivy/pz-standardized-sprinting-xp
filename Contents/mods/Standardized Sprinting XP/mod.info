@@ -1,0 +1,5 @@
+name=Standardized Sprinting XP
+poster=poster.png
+id=STSPRINT_B42
+description=Standardized Sprinting XP
+require=modoptions
