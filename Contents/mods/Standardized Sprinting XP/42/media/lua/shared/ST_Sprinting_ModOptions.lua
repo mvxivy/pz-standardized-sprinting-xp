@@ -7,7 +7,7 @@ function modOptions.init()
 
 	local ComboBoxFactory = MVXIVY_Utils.useComboBoxFactory(
 		"ST_Sprinting_",
-		"UI_options_" .. config.modId,
+		"UI_options_" .. config.modId .. "_",
 		UI
 	)
 
