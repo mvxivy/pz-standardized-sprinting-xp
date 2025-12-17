@@ -1,5 +1,9 @@
-name=Standardized Sprinting XP
-poster=poster.png
 id=STSPRINT_B42
-description=Standardized Sprinting XP
-require=modoptions
+name=Standardized Sprinting XP
+description=Standardized Sprinting XP for 42 Build
+author=MaxIvy
+poster=poster.png
+icon=icon.png
+modversion=2.0.1
+pzversion=42
+versionMin=42.13.0

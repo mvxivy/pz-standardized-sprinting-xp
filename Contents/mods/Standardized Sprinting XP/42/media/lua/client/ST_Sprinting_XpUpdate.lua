@@ -13,7 +13,7 @@ local function SprintingBonusXP()
 	-- if you're running and your endurance has changed
 	if 
 		(player:IsRunning() or player:isSprinting())
-		and player:getStats():getEndurance() > player:getStats():getEndurancewarn()
+		and player:getStats():getLastEndurance() > player:getStats():getEnduranceWarning()
 	then
 		-- you may gain 1 instance of Sprinting XP
 		if xpThrottle > sprintDelay[modOptions.ComboBoxDelay:getValue()] then
