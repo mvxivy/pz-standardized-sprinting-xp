@@ -1,0 +1,21 @@
+VERSION = 1,
+
+option STSPRINT_B42.XPPerPulse
+{
+    type = double,
+    default = 10,
+    min = 1.0,
+    max = 100.0,
+    page = STSPRINT_B42,
+    translation = STSPRINT_B42_XPPerPulse,
+}
+
+option STSPRINT_B42.MinIntervalSeconds
+{
+    type = double,
+    default = 1,
+    min = 1,
+    max = 10.0,
+    page = STSPRINT_B42,
+    translation = STSPRINT_B42_MinIntervalSeconds,
+}

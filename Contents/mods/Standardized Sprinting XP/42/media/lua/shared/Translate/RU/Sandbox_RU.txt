@@ -1,0 +1,9 @@
+Sandbox_RU = {
+    Sandbox_STSPRINT_B42 = "Опыт бега",
+
+    Sandbox_STSPRINT_B42_XPPerPulse = "Опыт за импульс",
+    Sandbox_STSPRINT_B42_XPPerPulse_tooltip = "Сколько опыта «Бега» выдаётся за один серверный импульс.",
+
+    Sandbox_STSPRINT_B42_MinIntervalSeconds = "Рейт-лимит (сек.)",
+    Sandbox_STSPRINT_B42_MinIntervalSeconds_tooltip = "Минимальное время между выдачами опыта на сервере для игрока.",
+}
