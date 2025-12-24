@@ -1,14 +1,13 @@
 local utils = require("MVXIVY_Utils")
 local config = require("ST_Sprinting_Config")
-local sandboxUtils = require("ST_Sprinting_SandboxOptions")
 
 local lastGrantAt = {} -- key -> time seconds
 local function getXPPerPulse()
-  return sandboxUtils.getOpt({"STSPRINT_B42", "XPPerPulse"}, 5)
+  return utils.sandbox.getOptionValue({"STSPRINT_B42", "XPPerPulse"}, 5)
 end
 
 local function getMinInterval()
-  return sandboxUtils.getOpt({"STSPRINT_B42", "MinIntervalSeconds"}, 1.0)
+  return utils.sandbox.getOptionValue({"STSPRINT_B42", "MinIntervalSeconds"}, 1.0)
 end
 
 --- allow grant for 
