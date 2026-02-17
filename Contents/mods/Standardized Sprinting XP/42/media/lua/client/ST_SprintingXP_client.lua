@@ -1,6 +1,7 @@
 
 local config = require("ST_Sprinting_Config")
 local modOptions = require("ST_Sprinting_ModOptions")
+local MVXIVY_Utils = require("MVXIVY_Utils")
 modOptions.init(not isMultiplayer())
 
 local sprintMultiplier = {1, 5, 10, 25, 50, 100, 1000};
@@ -8,10 +9,6 @@ local sprintDelay = {250, 500, 1000, 1500, 2000, 3000, 5000, 10000};
 
 -- xpThrottle is used to control the frequency of XP gain
 local xpThrottle = 0;
-local gameVersion = tostring(getCore():getGameVersion())
-local function gameVersionIs4213() 
-  return string.sub(gameVersion, 0, 5) == "42.13"
-end
 
 local function checkBonusCondition()
 	local player = getPlayer();
@@ -20,7 +17,7 @@ local function checkBonusCondition()
 	local sprinting = player:isSprinting()
 	local running = player:IsRunning()
 
-	if gameVersionIs4213() then
+	if MVXIVY_Utils.gameVersionIsAtLeast4213() then
 		return moving and (running or sprinting)
 			and player:getStats():getLastEndurance() > player:getStats():getEnduranceWarning()
 	else 
